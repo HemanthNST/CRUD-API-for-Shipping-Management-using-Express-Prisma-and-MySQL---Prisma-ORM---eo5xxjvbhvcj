@@ -1,5 +1,5 @@
 const verifySecret = (req, res, next) => {
-  const secretKey = req.headers["shipping_secret_key"];
+  const secretKey = req.headers && req.headers["shipping_secret_key"];
   const validSecretKey = process.env.SHIPPING_SECRET_KEY;
 
   if (!secretKey) {
