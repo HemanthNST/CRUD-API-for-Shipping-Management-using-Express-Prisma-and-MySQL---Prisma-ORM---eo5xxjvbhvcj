@@ -4,13 +4,13 @@ const verifySecret = (req, res, next) => {
 
   if (!secretKey) {
     return res.status(403).json({
-      error: "Failed to authenticate apiauthkey",
+      error: "apiauthkey is missing or invalid",
     });
   }
 
   if (secretKey !== validSecretKey) {
     return res.status(403).json({
-      error: "apiauthkey is missing or invalid",
+      error: "Failed to authenticate apiauthkey",
     });
   }
 
