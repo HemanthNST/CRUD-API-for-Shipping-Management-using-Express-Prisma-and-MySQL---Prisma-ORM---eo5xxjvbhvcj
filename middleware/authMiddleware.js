@@ -4,13 +4,13 @@ const verifySecret = (req, res, next) => {
 
   if (!secretKey) {
     return res.status(403).json({
-      error: "SHIPPING_SECRET_KEY is missing or invalid",
+      error: "apiauthkey is missing or invalid",
     });
   }
 
   if (secretKey !== validSecretKey) {
     return res.status(403).json({
-      error: "Failed to authenticate SHIPPING_SECRET_KEY",
+      error: "Failed to authenticate apiauthkey",
     });
   }
 
